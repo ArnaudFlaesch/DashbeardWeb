@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+  - 6
+  - 5
+  - 4
+
+env:
+  - NODE_ENV=travis
+
+before_install:
+  - npm cache clean
+  - export CODACY_PROJECT_TOKEN=b8647b409f87403483dc041027ff2f15
+  - npm install npm@3.0.0 -g
+  - npm install coveralls --save-dev
+  - npm install codacy-coverage --save
+  - npm install angular-cli -g
+  - npm install portfinder
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
+after_success:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage
+
+notifications:
+  email:
+    - flaesch.arnaud@esgi.fr
