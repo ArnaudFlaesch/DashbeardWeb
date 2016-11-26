@@ -1,0 +1,14 @@
+#dashboard {
+    background-image: url('/assets/background.jpg');
+}
+
+.postItHeader {
+    height: 2em;
+    background-color: goldenrod;
+}
+
+.postItBody {
+    background-color: gold;
+    min-height: 5em;
+    min-width: 5em;
+}

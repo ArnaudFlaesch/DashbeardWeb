@@ -7,8 +7,8 @@ describe('angular-application App', function() {
     page = new AngularApplicationPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying Dashbeard Web', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Application Dashbeard Web');
+    expect(page.getParagraphText()).toEqual('Dashbeard Web');
   });
 });
