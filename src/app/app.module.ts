@@ -4,11 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {PostItComponent} from "./app.postItComponent";
 import {PostIt} from "./PostIt";
 
 @NgModule({
-  declarations: [AppComponent, PostItComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     FormsModule,

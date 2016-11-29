@@ -1,23 +1,28 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>AngularApplication</title>
-  <base href="/">
+    <head>
+        <meta charset="utf-8">
+        <title>DashbeardWeb</title>
+        <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-</head>
-<body>
-  <app-root id="dashboard">Loading...</app-root>
-</body>
-<script>
-    $('.postItHeader').click(function() {
-        return console.log('clicked');
-    });
-</script>
+        <script>
+            function createNewPostIt() {
+                console.log("Create");
+            }
+
+            function deletePostIt() {
+                console.log("Delete");
+            }
+        </script>
+      </head>
+
+    <body>
+        <app-root id="dashboard">Loading...</app-root>
+    </body>
 </html>

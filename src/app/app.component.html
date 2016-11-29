@@ -1,9 +1,8 @@
-<h1>
-  {{title}}
-</h1>
-
-<div *ngFor='let postIt of postIts' draggable="true" class="postIt" (drag)="onDrag($event)"
-     [style.top]="postIt.positionY+'px'" [style.left]="postIt.positionX+'px'" [style.width]="postIt.sizeX+'px'" [style.height]="postIt.sizeY+'px'">
-    <div class="postItHeader" align="right">+ | X</div>
-    <div class="postItBody">Contenu du PostIt {{ postIt.content }}  my width={{postIt.sizeX}} & height={{postIt.sizeY}}</div>
+<div *ngFor='let postIt of postIts' class="postIt" [style.top]="postIt.positionY+'px'" [style.left]="postIt.positionX+'px'"
+     [style.width]="postIt.sizeX+'px'" [style.height]="postIt.sizeY+'px'">
+    <div class="postItHeader" align="right" font-size="2em">
+        <span onclick="createNewPostIt()">+</span> <span onclick="deletePostIt()">x</span>
+    </div>
+    <div class="postItBody">{{ postIt.content }}</div>
+    <br />
 </div>

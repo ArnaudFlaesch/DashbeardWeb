@@ -29,3 +29,12 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
+assets/background.jpg
+favicon.ico
+index.html
+inline.bundle.js
+inline.map
+main.bundle.js
+main.map
+styles.bundle.js
+styles.map
