@@ -29,9 +29,36 @@ export class AppComponent implements OnInit {
                 postIts => this.postIts = postIts,
                 error =>  this.errorMessage = <any>error);
     }
+	
+	createPostIt(): void {
+        console.log("Create in Component");
+        this.postItService.addNewPostIt(new PostIt())
+            .subscribe(
+                postIt  => this.postIts.push(postIt),
+                error =>  this.errorMessage = <any>error);
+    }
 
+	updatePostIt(postIt: PostIt): void {
+        console.log("Update in Component");
+        this.postItService
+            .update(postIt);
+    }
+
+
+     deletePostIt(idPostIt: number): void {
+         console.log("Delete in Component");
+         /*
+         this.postItService
+             .delete(idPostIt)
+             .subscribe(
+                 this.postIts = this.postIts.filter(post => post.idPostIt !== idPostIt),
+                 error =>  this.errorMessage = <any>error);
+             }
+         */
+     }
+
+	
     onDrag(event: MouseEvent) {
         console.log(event);
     }
-
 }

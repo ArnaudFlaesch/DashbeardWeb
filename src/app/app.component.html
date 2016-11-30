@@ -1,8 +1,12 @@
+<h1>{{ title }}</h1>
+
+<button *ngIf="postIts.length==0" (click)="createPostIt()">Ajouter un nouveau post-it</button>
+
 <div *ngFor='let postIt of postIts' class="postIt" [style.top]="postIt.positionY+'px'" [style.left]="postIt.positionX+'px'"
      [style.width]="postIt.sizeX+'px'" [style.height]="postIt.sizeY+'px'">
     <div class="postItHeader" font-size="2em">
-        <button onclick="createNewPostIt()">+</button> <button onclick="deletePostIt()">x</button>
+        <button (click)="createPostIt()">+</button> <button (click)=deletePostIt(postIt.idPostIt)>x</button>
     </div>
-    <textarea cols="34" class="postItBody" onkeyup="updatePostIt()" >{{ postIt.content }}</textarea>
+    <textarea cols="34" class="postItBody" (click)="updatePostIt(postIt)">{{ postIt.content }}</textarea>
     <br />
 </div>
