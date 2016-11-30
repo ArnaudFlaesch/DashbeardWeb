@@ -2,13 +2,18 @@
     background-image: url('/assets/background.jpg');
 }
 
+.postIt {
+    min-width: 5em;
+}
+
 .postItHeader {
     height: 2em;
-    background-color: goldenrod;
+    min-width: 5em;
 }
 
 .postItBody {
     background-color: gold;
     min-height: 5em;
     min-width: 5em;
+    padding: 3px;
 }

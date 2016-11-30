@@ -1,8 +1,8 @@
 <div *ngFor='let postIt of postIts' class="postIt" [style.top]="postIt.positionY+'px'" [style.left]="postIt.positionX+'px'"
      [style.width]="postIt.sizeX+'px'" [style.height]="postIt.sizeY+'px'">
-    <div class="postItHeader" align="right" font-size="2em">
-        <span onclick="createNewPostIt()">+</span> <span onclick="deletePostIt()">x</span>
+    <div class="postItHeader" font-size="2em">
+        <button onclick="createNewPostIt()">+</button> <button onclick="deletePostIt()">x</button>
     </div>
-    <div class="postItBody">{{ postIt.content }}</div>
+    <textarea cols="34" class="postItBody" onkeyup="updatePostIt()" >{{ postIt.content }}</textarea>
     <br />
 </div>
