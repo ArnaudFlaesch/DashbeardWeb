@@ -31,7 +31,6 @@ export class AppComponent implements OnInit {
     }
 	
 	createPostIt(): void {
-        console.log("Create in Component");
         this.postItService.addNewPostIt(new PostIt())
             .subscribe(
                 postIt  => this.postIts.push(postIt),
@@ -40,8 +39,8 @@ export class AppComponent implements OnInit {
 
 	updatePostIt(postIt: PostIt): void {
         console.log("Update in Component");
-        this.postItService
-            .update(postIt);
+        console.log(postIt);
+        this.postItService.update(postIt);
     }
 
 

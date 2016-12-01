@@ -23,15 +23,11 @@ export class PostItService {
     }
 
 	addNewPostIt(postIt : PostIt): Observable<PostIt> {
-        console.log(postIt);
-        console.log(this.http.post(this.API_URL, postIt, {headers : this.headers}).map(this.extractData));
 		return this.http.post(this.API_URL, postIt, {headers : this.headers}).map(this.extractData);
 	}
 	
-	update(postIt: PostIt): Observable<PostIt> {
-		const url = `${this.API_URL}/${postIt.idPostIt}`;
-        return this.http.put(url, JSON.stringify({content: postIt.content}), {headers : this.headers})
-            .map(this.extractData);
+	update(postIt: PostIt): void {
+        this.http.put(this.API_URL, postIt, {headers : this.headers});
 	}
 
 	delete(idPostIt: number): Observable<void> {
