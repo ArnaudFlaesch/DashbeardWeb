@@ -13,7 +13,7 @@
     "e2e": "protractor",
     "test": "karma start karma.conf.js --single-run",
     "preinstall": "npm install -g http-server",
-    "postinstall": "ng build"
+    "postinstall": "ng build  && mv dist/* ."
   },
   "private": true,
   "dependencies": {
